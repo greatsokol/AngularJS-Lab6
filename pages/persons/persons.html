@@ -14,8 +14,10 @@
             <th>Job title</th>
         </tr>
         <tr ng-repeat="person in personsList">
-            <td ng-if="selectedPerson == $index + 1"><input type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)" checked></td>
-            <td ng-if="selectedPerson != $index + 1"><input type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)"></td>
+            <td>
+               <input ng-if="selectedPerson == $index + 1" type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)" checked>
+               <input ng-if="selectedPerson != $index + 1" type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)">
+            </td>
             <td>{{person.name + " " + person.surname}}</td>
             <td>{{person.age}}</td>
             <td>{{person.job}}</td>
